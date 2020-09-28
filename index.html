@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Primary Meta Tags -->
+    <title>Do you pay more tax than Donald Trump!?!</title>
+    <meta name="title" content="Do you pay more tax than Donald Trump!?!" />
+    <meta name="description" content="Yes!" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.doyoupaymoretaxthantrump.com/" />
+    <meta property="og:title" content="Do you pay more tax than Donald Trump!?!" />
+    <meta property="og:description" content="Yes!" />
+    <meta property="og:image" content="" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.doyoupaymoretaxthantrump.com/" />
+    <meta property="twitter:title" content="Do you pay more tax than Donald Trump!?!" />
+    <meta property="twitter:description" content="Yes!" />
+    <meta property="twitter:image" content="" />
+
+    <!-- <link rel="icon" href="favicon.ico" /> -->
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+  <body class="text-center">
+    <div class="container">
+      <h1 class="h3 mb-5 font-weight-normal text-center">Do you pay more taxes than Donald Trump?</h1>
+      <div class="row">
+        <form class="tax-form col-md-4 offset-md-4 mb-3">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+            </div>
+            <label for="tax" class="sr-only">Tax amount</label>
+            <input type="number" id="tax" class="form-control" placeholder="Enter how much you pay in taxes" required autofocus />
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Calculate</button>
+        </form>
+      </div>
+      <div class="row">
+        <span class="jumbotron jumbotron-fluid answer text-center"></span>
+      </div>
+    </div>
+    <footer class="footer mt-auto container">
+      <div class="row">
+        <div class="col-md-4">
+          <span class="text-muted"
+            ><a href="https://www.pexels.com/photo/low-angle-photography-of-gray-concrete-building-under-blue-sky-3653211/">Photo</a> by Priya Karkare from
+            Pexels</span
+          >
+        </div>
+        <div class="col-md-4 offset-md-4">
+          <a href="https://www.nytimes.com/interactive/2020/09/27/us/donald-trump-taxes.html">Review his tax returns.</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      let form = document.querySelector('.tax-form')
+      let answer = document.querySelector('.answer')
+      console.log(form)
+      form.addEventListener('submit', calculate)
+      function calculate(el) {
+        el.preventDefault()
+        // let nf = document.querySelector(el)
+        console.log(el)
+        let value = el.srcElement[0].valueAsNumber
+        if (value >= 750) {
+          answer.textContent = 'YES'
+        }
+        if (value == 750) {
+          answer.textContent = 'You pay the same!'
+        }
+
+        if (value < 750) {
+          answer.textContent = 'No, you also win at capitalism!'
+        }
+      }
+    </script>
+  </body>
+</html>
